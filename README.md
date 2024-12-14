@@ -133,3 +133,7 @@ input("Press Enter to close the browser...")
 driver.quit()
 
 ```
+
+### Reference video:
+https://www.youtube.com/watch?v=yjDGB5WSV_w
+
