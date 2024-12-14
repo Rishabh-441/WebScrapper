@@ -24,7 +24,7 @@ Follow the steps below to clone the project and set it up on your local machine.
 Clone the repository to your local machine using the following command:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Rishabh-441/WebScrapper/tree/main
 cd amazon-scraper
 ```
 ### 2. Install Dependencies:
@@ -34,7 +34,7 @@ Activate your virtual environment (if you created one) and install the required 
 pip install -r requirements.txt
 ```
 
-### 4. Install Chrome and ChromeDriver:
+### 3. Install Chrome and ChromeDriver:
 
 This project uses Selenium for web scraping, which requires Chrome and ChromeDriver.
 
@@ -44,7 +44,7 @@ Make sure ChromeDriver is accessible from your command line. You can either:
 Add the directory containing ChromeDriver to your system's PATH environment variable.
 Specify the path to the ChromeDriver executable within the project script.
 
-### 5. Set Up the Database (Optional):
+### 4. Set Up the Database (Optional):
 
 By default, this project uses SQLite for data storage. If you prefer a different database (e.g., PostgreSQL), you can configure it in the Django settings. To use the default SQLite database, run the following command to create the database schema:
 
@@ -52,7 +52,7 @@ By default, this project uses SQLite for data storage. If you prefer a different
 python manage.py migrate
 ```
 
-### 6. Run the Development Server:
+### 5. Run the Development Server:
 
 Start the Django development server:
 
@@ -64,7 +64,7 @@ The server will be running at:
 http://127.0.0.1:8000/
 
 
-### 7. Access the Application:
+### 6. Access the Application:
 
 Open your web browser and navigate to http://127.0.0.1:8000/.
 You'll see a form where you can enter a product name (e.g., "mobiles").
