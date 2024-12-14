@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Scraper</title>
+    <script>
+        // JavaScript to add CSS styling
+        document.addEventListener("DOMContentLoaded", function() {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f9;
+                    margin: 0;
+                    padding: 0;
+                }
+                h1 {
+                    text-align: center;
+                    color: #333;
+                    padding: 20px;
+                }
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 50px;
+                }
+                label {
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                    color: #555;
+                }
+                input[type="text"] {
+                    padding: 10px;
+                    width: 300px;
+                    margin-bottom: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                button {
+                    padding: 10px 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #45a049;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</head>
+<body>
+    <h1>Amazon Scraper</h1>
+    <form method="GET" action="{% url 'search_product' %}">
+        <label for="product_name">Enter Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <script>
+        // JavaScript to add CSS styling
+        document.addEventListener("DOMContentLoaded", function() {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f9;
+                    margin: 0;
+                    padding: 0;
+                    color: #333;
+                }
+                h1 {
+                    text-align: center;
+                    color: #333;
+                    padding: 20px;
+                }
+                .btn {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    margin: 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                }
+                .btn:hover {
+                    background-color: #45a049;
+                }
+                table {
+                    width: 80%;
+                    margin: 0 auto;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+                th, td {
+                    padding: 12px;
+                    text-align: left;
+                    border: 1px solid #ddd;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+                img {
+                    max-width: 100px;
+                    height: auto;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</head>
+<body>
+    <h1>Search Results for "{{ product_name }}"</h1>
+
+    <!-- Link to download the CSV -->
+    <a href="{% url 'download_csv' %}" class="btn btn-primary">Download CSV</a>
+
+    <!-- Table displaying the search results -->
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Rating</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.Title }}</td>
+                <td><img src="{{ product.Image_URL }}" alt="{{ product.Title }}"></td>
+                <td>{{ product.Rating }}</td>
+                <td>{{ product.Price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
